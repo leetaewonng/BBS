@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width" , initial-scale="1">
+<meta name="viewport" content="width=device-width , initial-scale=1">
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/custom.css">
 <title>경기도 광주 백신 정보사이트</title>
@@ -28,7 +28,7 @@
 			<a class="navbar-brand" href="main.jsp"> 경기도 광주 </a> 
 			<a class="navbar-brand">COVID-19<br>코로나19 예방접종 백신정보 사이트</a>
 		</div>
-		<div class="collapse navbar-collapse" id=bs-example-navbar-collapse-1">
+		<div class="collapse navbar-collapse id=bs-example-navbar-collapse-1">
 			<%
 			if (userID == null) {
 			%>
@@ -71,7 +71,7 @@
 		<div class="jumbotron">
 			<div class="container">
 				<h1>사전예약 기간 안내</h1>
-				<p><60세~74세 고령층 사전예약 후 미접종자 7월 접종 안내></p>
+				<p> 60세~74세 고령층 사전예약 후 미접종자 7월 접종 안내 </p>
 				<p>○ (대상) : 60세~74세 (1947. 1. 1. ~ 1961. 12. 31. 출생)</p>
 				<p>○ (예약기간) : 7. 12(월) ~ 7. 17(토)</p>
 				<p>○ (접종기간) : 7. 26(월) ~ 8. 7(토)</p>
@@ -79,7 +79,7 @@
 				<p>사전예약을 완료하였으나, 건강상 이유 등 다양한 사유로 미접종한 자</p>
 				<br>
 				<p>
-					<교육 및 보육 종사자 예방접종 사전안내>
+					교육 및 보육 종사자 예방접종 사전안내
 				</p>
 				<p>○ (대상) : 어린이집, 유치원 · 초등학교 · 중학교 교직원 등</p>
 				<p>○ (예약기간) : 7. 14(수) 0시 ~ 7. 17(토) 18시</p>
@@ -95,12 +95,12 @@
 	<div style="background-color: #eeeeee; float: left; width: 33%; text-align: center;">
 	<h>백신 접종 전</h><br>
 	<h>주의사항</h><br>
-	<a class="btn btn-primary btn-pull" href="vaccine" role="button">자세히</a>
+	<a class="btn btn-primary btn-pull" href="vaccineB.jsp" role="button">자세히</a>
 	</div>
 	<div style="background-color: #eeeeee; float: left; width: 33%; text-align: center;">
 	<h>백신 접종 후</h><br>
 	<h>주의사항</h><br>
-	<a class="btn btn-primary btn-pull" href="vaccine" role="button">자세히</a>
+	<a class="btn btn-primary btn-pull" href="vaccineA.jsp" role="button">자세히</a>
 	</div>
 	<div style="background-color: #eeeeee; float: left; width: 33%; text-align: center;">
 	<h>자유</h><br>

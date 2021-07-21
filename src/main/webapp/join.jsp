@@ -1,52 +1,168 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ page import="java.io.PrintWriter"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width" , initial-scale="1">
-<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/custom.css">
+	<title>JSP AJAX 회원가입</title>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script type="text/javascript">
+		function registerCheckFunction() {
+			var userID = $('#userID').val();
+			$.ajax({
+				type: 'POST',
+				url: './UserRegisterCheckServlet',
+				data: {userID: userID},
+				success: function(result) {
+					if(result == 1) {
+	 					$('#checkMessage').html('사용할 수 있는 아이디입니다.');
+						$('#checkType').attr('class', 'modal-content panel-success');
+					}
+					else {
+						$('#checkMessage').html('사용할 수 없는 아이디입니다.');
+						$('#checkType').attr('class', 'modal-content panel-warning');
+					}
+					$('#checkModal').modal("show");
+				}
+			})
+		}
+		function passwordCheckFunction() {
+			var userPassword1 = $('#userPassword1').val();
+			var userPassword2 = $('#userPassword2').val();
+			if(userPassword1 != userPassword2) {
+				$('#passwordCheckMessage').html('비밀번호가 서로 일치하지 않습니다.');
+			} else {
+				$('#passwordCheckMessage').html('')
+			}
+		}
+	</script>
 </head>
 <body>
-	<div id="map" style="width: 2200px; height: 1200px;"></div>
-	<script type="text/javascript"
-		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=fbbc7335f83ea0e291ce40cd973c1669"></script>
+	<div class="container">
+		<div class="col=lg-4"></div>
+		<div class="col=lg-4">
+		<form method="post" action="joinAction.jsp">
+			<table class="table table-bordered table-hover" style="text-align: center; border: 1px solid #dddddd">
+				<thead>
+					<tr>
+						<h3 style="text-align: center;">회원가입 화면</h3>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td style="width: 110px;"><h5>아이디</h5></td>
+						<td><input class="form-control" type="text" id="userID" name="userID" maxLength="20" placeholder="아이디를 입력해주세요"></td>
+						<td style="width: 110px;"><button class="btn btn-primary" onclick="registerCheckFunction();" type="button">중복체크</button></td>
+					</tr>
+					<tr>
+						<td style="width: 110px;"><h5>비밀번호</h5></td>
+						<td colspan="2"><input type="password" class="form-control" placeholder="비밀번호" name="userPassword" maxlength="20" onkeyup="passwordCheckFunction();" id="userPassword1" name="userPassword1" ></td>
+					</tr>
+					<tr>
+						<td style="width: 110px;"><h5>비밀번호 확인</h5></td>
+						<td colspan="2"><input type="password" class="form-control" placeholder="비밀번호" name="userPassword" maxlength="20" onkeyup="passwordCheckFunction();" id="userPassword2" name="userPassword2"></td>
+					</tr>
+					<tr>
+						<td style="width: 110px;"><h5>이름</h5></td>
+						<td colspan="2"><input class="form-control" type="text" id="userName" name="userName" maxLength="20" placeholder="이름을 입력해주세요"></td>
+					</tr>
+					<tr>
+						<td style="width: 110px;"><h5>나이</h5></td>
+						<td colspan="2"><input class="form-control" type="text" id="userAge" name="userAge" maxLength="20" placeholder="나이를 입력해주세요"></td>
+					</tr>
+					<tr>
+						<td style="width: 110px;"><h5>성별</h5></td>
+						<td colspan="2">
+							<div class="form-group" style="text-align: center; margin: 0 auto;">
+								<div class="btn-group" data-toggle="buttons">
+									<label class="btn btn-primary active">
+										<input type="radio" name="userGender" autocomplete="off" value="남자" checked>남자
+									</label>
+									<label class="btn btn-primary">
+										<input type="radio" name="userGender" autocomplete="off" value="남자">여자
+									</label>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td style="width: 110px;"><h5>이메일</h5></td>
+						<td colspan="2"><input class="form-control" type="email" id="userEmail" name="userEmail" maxLength="20" placeholder="이메일을 입력해주세요"></td>
+					</tr>
+					<tr>			
+						<td style="text-align: left;" colspan="3"><h5 style="color: red;" id="passwordCheckMessage"></h5><input class="btn btn-primary pull-right" type="submit" value="회원가입"></td>
+					</tr>			
+				</tbody>
+			</table>
+		</form>
+	</div>
+	<%
+		String messageContent = null;
+		if(session.getAttribute("messageContent") != null) {
+			messageContent = (String) session.getAttribute("messageContent");
+		}
+		String messageType = null;
+		if(session.getAttribute("messageContent") != null) {
+			messageType = (String) session.getAttribute("messageType");
+		}
+		if(messageContent != null) {
+	%>
+	<div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="vertical-alignment-helper">
+			<div class="modal-dialog vertical-align-center">
+				<div class="modal-content <% if(messageType.equals("오류 메세지")) out.println("panel-warning"); else out.println("panel-success");%>">
+					<div class="modal-header panel-heading">
+						<button type="button" class="close" data-dismiss="modal">
+							<span aria-hidden="true">&times;</span>
+							<span class="sr-only">Close</span>
+						</button>
+						<h4 class="modal-title">
+							<%= messageType %>
+						</h4>
+					</div>
+					<div class="modal-body">
+						<%= messageContent %>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	<script>
-		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-		mapOption = {
-			center : new kakao.maps.LatLng(37.35066285625322,
-					127.10718858038521), // 지도의 중심좌표
-			level : 4
-		// 지도의 확대 레벨
-		};
-
-		var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
-
-		// 마커가 표시될 위치입니다 
-		var markerPosition = new kakao.maps.LatLng(37.35066285625322,
-				127.10718858038521);
-
-		// 마커를 생성합니다
-		var marker = new kakao.maps.Marker({
-			position : markerPosition
-		});
-
-		// 마커가 지도 위에 표시되도록 설정합니다
-		marker.setMap(map);
-
-		var iwContent = '<div style="padding:5px;">그린아카데미 <br><a href="https://map.kakao.com/link/map/그린아카데미,37.35066285625322, 127.10718858038521" style="color:blue" target="_blank">큰지도보기</a> <a href="https://map.kakao.com/link/to/Hello World!,37.35066285625322, 127.10718858038521" style="color:blue" target="_blank">길찾기</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
-		iwPosition = new kakao.maps.LatLng(37.35066285625322,
-				127.10718858038521); //인포윈도우 표시 위치입니다
-
-		// 인포윈도우를 생성합니다
-		var infowindow = new kakao.maps.InfoWindow({
-			position : iwPosition,
-			content : iwContent
-		});
-
-		// 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
-		infowindow.open(map, marker)
+		$('#messageModal').modal("show");
 	</script>
+	<%
+		session.removeAttribute("messageContent");
+		session.removeAttribute("messageType");
+		}
+	%>
+	<div class="modal fade" id="checkModal" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="vertical-alignment-helper">
+			<div class="modal-dialog vertical-align-center">
+				<div id="checkType" class="modal-content panel-info">
+					<div class="modal-header panel-heading">
+						<button type="button" class="close" data-dismiss="modal">
+							<span aria-hidden="true">&times;</span>
+							<span class="sr-only">Close</span>
+						</button>
+						<h4 class="modal-title">
+							확인 메세지
+						</h4>
+					</div>
+					<div class="modal-body" id="checkMessage">
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

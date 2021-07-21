@@ -118,7 +118,7 @@
 
 				</li>
 
-				<li><a href="https://ncvr.kdca.go.kr/index_n.html">예약하러 가기</a>
+		<li><a href="https://ncvr.kdca.go.kr/index_n.html">예약하러 가기</a>
 
 				</li>
 
@@ -138,11 +138,11 @@
 
  
 
-				<li class="dropdown"><a href="#" class="dropdown-toggle"
+			<li class="dropdown"><a href="#" class="dropdown-toggle"
 
 					data-toggle="dropdown" role="button" aria-haspopup="true"
 
-					aria-expanded="false">경기광주시민체육관<span class="caret"></span></a>
+					aria-expanded="false">참조은병원<span class="caret"></span></a>
 
 					<ul class="dropdown-menu">
 
@@ -160,19 +160,17 @@
 
 			<div class="container">
 
-				<h1>코로나19 백신접종 교통편의 지원</h1>
+				<h1>찾아오시는 길</h1>
 
-				<p>☎ 031-769-1030 ☎</p>
+				<p>☎ 1600-9955 ☎</p>
 
-				<p>2021년 5월 1일 ~ 6월 30일 : 권역별 노선 운영 4대 운영</p>
+				<p>일반버스 : 32, 17, 60 이용시 광주터미널 정류장 하차</p>
 
-				<p>1호차 : 광주터미널 - 보건소 - 경기광주역 - 시민체육관</p>
+			    <p>&emsp;&emsp;&emsp;&emsp;&emsp;2, 660, 17-1, 33-2 이용시 경안동 주민센터, 우체국앞 정류장 하차</p>
 
-				<p>2호차 : 오포농협 - 능평도서관 - 오포읍사무소 - 오포공성운동장 - 시민체육관</p>
+				<p>&emsp;&emsp;&emsp;&emsp;&emsp;20 이용시 경안동 공용주차장 정류장 하차</p>
 
-				<p>3호차 : 도척면사무소 - 곤지암터미널 - 초월읍사무소 - 김촌말 - 시민체육관</p>
-
-				<p>4호차 : 남종면사무소 - 퇴촌농협앞 - 남한산성면사무소 - 시민체육관</p>
+				<p>좌석버스 : 1113번 이용시 광주터미널 정류장 하차</p>
 
 			</div>
 
@@ -192,9 +190,7 @@
 
 		mapOption = {
 
-			center : new kakao.maps.LatLng(37.39477923848797,
-
-					127.25865020216514), // 지도의 중심좌표
+			center : new kakao.maps.LatLng(37.411087917677875, 127.26016156937312), // 지도의 중심좌표
 
 			level : 4
 
@@ -210,9 +206,7 @@
 
 		// 마커가 표시될 위치입니다 
 
-		var markerPosition = new kakao.maps.LatLng(37.39477923848797,
-
-				127.25865020216514);
+		var markerPosition = new kakao.maps.LatLng(37.411087917677875, 127.26016156937312);
 
  
 
@@ -232,11 +226,9 @@
 
  
 
-		var iwContent = '<div style="padding:5px;">경기광주시민체육관 <br><a href="https://map.kakao.com/link/map/경기광주시민체육관,37.39477923848797, 127.25865020216514" style="color:blue" target="_blank">큰지도보기</a> <a href="https://map.kakao.com/link/to/광주시민체육관,37.39477923848797, 127.25865020216514" style="color:blue" target="_blank">길찾기</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+		var iwContent = '<div style="padding:5px;">참조은병원<br><a href="https://map.kakao.com/link/map/참조은병원,37.411087917677875, 127.26016156937312" style="color:blue" target="_blank">큰지도보기</a> <a href="https://map.kakao.com/link/to/참조은병원,37.411087917677875, 127.26016156937312" style="color:blue" target="_blank">길찾기</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
 
-		iwPosition = new kakao.maps.LatLng(37.39477923848797,
-
-				127.25865020216514); //인포윈도우 표시 위치입니다
+		iwPosition = new kakao.maps.LatLng(37.411087917677875, 127.26016156937312); //인포윈도우 표시 위치입니다
 
  
 
@@ -273,4 +265,3 @@
 </body>
 
 </html>
-

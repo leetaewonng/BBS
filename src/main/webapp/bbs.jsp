@@ -119,7 +119,7 @@
 			<%
 				}
 			%>
-			<a href="write.jsp" class="btn btn-primary pull-right">글쓰기</a>
+			<a href="bbsAction.jsp" class="btn btn-primary pull-right">글쓰기</a>
 		</div>
 	</div>
 	<script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
