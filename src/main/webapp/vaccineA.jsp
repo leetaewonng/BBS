@@ -35,6 +35,11 @@
 	}
 
 	%>
+	<br>
+	<center>
+		<a href="main.jsp"> <img src="images/2.png" width="400" height="100"></a>
+	</center>
+	<br>
 
 	<nav class="navbar navbar-default">
 
@@ -124,7 +129,13 @@
 
 				<li><a href="map.jsp">의료기관 위치</a></li>
 
-				<li><a href="bbs.jsp">자유게시판</a></li>
+				<li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown" role="button" aria-haspopup="true"
+					aria-expanded="false">게시판<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="bbs.jsp">자유게시판</a></li>
+						<li><a href="bbs2.jsp">후기게시판</a></li>
+					</ul></li>
 
 			</ul>
 
@@ -164,7 +175,8 @@
 
 					심해지면 의료기관을 방문하여 진료를 받아야 한다.<br><br> 심한 알레르기 반응(아나필락시스 등)이 나타나면 즉시 119로
 
-					연락하거나 가까운 응급실로 내원해야 한다.</p> <a>출처 : 히트뉴스(http://www.hitnews.co.kr)</a>
+					연락하거나 가까운 응급실로 내원해야 한다.</p> <a>출처 : 히트뉴스(http://www.hitnews.co.kr)</a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <a class="btn btn-primary btn-pull" href="main.jsp"
+			role="button">돌아가기</a>
 
 			</div>
 

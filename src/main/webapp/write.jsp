@@ -17,6 +17,11 @@
 		userID = (String) session.getAttribute("userID");
 	}
 	%>
+	<br>
+	<center>
+		<a href="main.jsp"> <img src="images/2.png" width="400" height="100"></a>
+	</center>
+	<br>
 	<nav class="navbar navbar-default">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed"
@@ -56,14 +61,19 @@
 			}
 			%>
 			<ul class="nav navbar-nav navbar-right">
-				<li class="active"><a href="main.jsp">홈</a>
+				<li ><a href="main.jsp">홈</a>
 				</li>
 				<li><a href="https://ncvr.kdca.go.kr/cobk/index_n.html">예약하러 가기</a>
 				</li>
 				<li><a href="map.jsp">의료기관 위치</a>
 				</li>
-				<li><a href="bbs.jsp">자유게시판</a>
-				</li>
+					<li class="active" class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown" role="button" aria-haspopup="true"
+					aria-expanded="false">게시판<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="bbs.jsp">자유게시판</a></li>
+						<li><a href="bbs2.jsp">후기게시판</a></li>
+					</ul></li>
 			</ul>
 		</div>
 	</nav>

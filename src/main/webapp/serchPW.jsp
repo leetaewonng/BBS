@@ -59,12 +59,15 @@
 		<div class="col=lg-4"></div>
 		<div class="col=lg-4">
 				<form method="post" action="loginAction.jsp">
-					<h3 style="text-align: center;">로 그 인</h3>
+					<h3 style="text-align: center;">비밀번호찾기</h3>
 					<div class="form-group">
-						<input type="text" class="form-control" placeholder="아이디" name="userID" maxlength="20">
+						<input type="text" class="form-control" placeholder="아이디를 입력하세요." name="userID" maxlength="20">
 					</div>
 					<div class="form-group">
-						<input type="password" class="form-control" placeholder="비밀번호" name="userPassword" maxlength="20">
+						<input type="password" class="form-control" placeholder="이름을 입력하세요." name="userName" maxlength="20">
+					</div>
+					<div class="form-group">
+						<input type="password" class="form-control" placeholder="이메일을 입력하세요." name="userEmail" maxlength="20">
 					</div>
 					<input type="submit" class="btn btn-primary form-control" value="확인">
 				</form>
@@ -72,7 +75,6 @@
 		<div class="col-lg-4"></div>
 	</div>
 	</div>
-	<a href="serchID.jsp">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;아이디 *</a> <a href="serchPW.jsp">비밀번호찾기</a> <a href="join.jsp">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;회원가입</a>
 	<script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 </body>

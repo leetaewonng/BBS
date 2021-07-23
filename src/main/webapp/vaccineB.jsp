@@ -35,6 +35,11 @@
 	}
 
 	%>
+	<br>
+	<center>
+		<a href="main.jsp"> <img src="images/2.png" width="400" height="100"></a>
+	</center>
+	<br>
 
 	<nav class="navbar navbar-default">
 
@@ -124,7 +129,13 @@
 
 				<li><a href="map.jsp">의료기관 위치</a></li>
 
-				<li><a href="bbs.jsp">자유게시판</a></li>
+				<li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown" role="button" aria-haspopup="true"
+					aria-expanded="false">게시판<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="bbs.jsp">자유게시판</a></li>
+						<li><a href="bbs2.jsp">후기게시판</a></li>
+					</ul></li>
 
 			</ul>
 
@@ -152,7 +163,8 @@
 
 					접종간격은 아스트라제네카 제품 8∼12주, 화이자 제품 3주다. <br><br></p><a>출처 :
 
-					히트뉴스(http://www.hitnews.co.kr)</a>
+					히트뉴스(http://www.hitnews.co.kr)</a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <a class="btn btn-primary btn-pull" href="main.jsp"
+			role="button">돌아가기</a>
 
 			</div>
 

@@ -35,6 +35,11 @@
 	}
 
 	%>
+	<br>
+	<center>
+		<a href="main.jsp"> <img src="images/2.png" width="400" height="100"></a>
+	</center>
+	<br>
 
 	<nav class="navbar navbar-default">
 
@@ -126,9 +131,13 @@
 
 				</li>
 
-				<li><a href="bbs.jsp">자유게시판</a>
-
-				</li>
+				<li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown" role="button" aria-haspopup="true"
+					aria-expanded="false">게시판<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="bbs.jsp">자유게시판</a></li>
+						<li><a href="bbs2.jsp">후기게시판</a></li>
+					</ul></li>
 
 			</ul>
 
@@ -153,34 +162,9 @@
 					</ul></li>
 
 			</ul>
+			<h1 style="text-align: center;">경기광주시민체육관</h1><br>
 
-	<div class="container">
-
-		<div class="jumbotron">
-
-			<div class="container">
-
-				<h1>코로나19 백신접종 교통편의 지원</h1>
-
-				<p>☎ 031-769-1030 ☎</p>
-
-				<p>2021년 5월 1일 ~ 6월 30일 : 권역별 노선 운영 4대 운영</p>
-
-				<p>1호차 : 광주터미널 - 보건소 - 경기광주역 - 시민체육관</p>
-
-				<p>2호차 : 오포농협 - 능평도서관 - 오포읍사무소 - 오포공성운동장 - 시민체육관</p>
-
-				<p>3호차 : 도척면사무소 - 곤지암터미널 - 초월읍사무소 - 김촌말 - 시민체육관</p>
-
-				<p>4호차 : 남종면사무소 - 퇴촌농협앞 - 남한산성면사무소 - 시민체육관</p>
-
-			</div>
-
-		</div>
-
-	</div>
-
-	<div id="map" style="width: 2200px; height: 1200px;"></div>
+	<center><div id="map" style="width: 1137px; height: 400px;"></div></center>
 
 	<script type="text/javascript"
 
@@ -257,10 +241,30 @@
 		infowindow.open(map, marker)
 
 	</script>
+	<br><br>
+		<div class="container">
 
-	<div>
+		<div class="jumbotron">
 
-	
+			<div class="container">
+
+				<h1>코로나19 백신접종 교통편의 지원</h1>
+
+				<p>☎ 031-769-1030 ☎</p>
+
+				<p>2021년 5월 1일 ~ 6월 30일 : 권역별 노선 운영 4대 운영</p>
+
+				<p>1호차 : 광주터미널 - 보건소 - 경기광주역 - 시민체육관</p>
+
+				<p>2호차 : 오포농협 - 능평도서관 - 오포읍사무소 - 오포공성운동장 - 시민체육관</p>
+
+				<p>3호차 : 도척면사무소 - 곤지암터미널 - 초월읍사무소 - 김촌말 - 시민체육관</p>
+
+				<p>4호차 : 남종면사무소 - 퇴촌농협앞 - 남한산성면사무소 - 시민체육관</p>
+
+			</div>
+
+		</div>
 
 	</div>
 

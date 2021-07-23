@@ -35,6 +35,11 @@
 	}
 
 	%>
+	<br>
+	<center>
+		<a href="main.jsp"> <img src="images/2.png" width="400" height="100"></a>
+	</center>
+	<br>
 
 	<nav class="navbar navbar-default">
 
@@ -126,18 +131,20 @@
 
 				</li>
 
-				<li><a href="bbs.jsp">자유게시판</a>
-
-				</li>
+				<li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown" role="button" aria-haspopup="true"
+					aria-expanded="false">게시판<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="bbs.jsp">자유게시판</a></li>
+						<li><a href="bbs2.jsp">후기게시판</a></li>
+					</ul></li>
 
 			</ul>
 
 		</div>
 
 	</nav>
-
  
-
 			<li class="dropdown"><a href="#" class="dropdown-toggle"
 
 					data-toggle="dropdown" role="button" aria-haspopup="true"
@@ -153,33 +160,11 @@
 					</ul></li>
 
 			</ul>
+						<h1 style="text-align: center;">참 조 은 병 원</h1><br>
+			
 
-	<div class="container">
-
-		<div class="jumbotron">
-
-			<div class="container">
-
-				<h1>찾아오시는 길</h1>
-
-				<p>☎ 1600-9955 ☎</p>
-
-				<p>일반버스 : 32, 17, 60 이용시 광주터미널 정류장 하차</p>
-
-			    <p>&emsp;&emsp;&emsp;&emsp;&emsp;2, 660, 17-1, 33-2 이용시 경안동 주민센터, 우체국앞 정류장 하차</p>
-
-				<p>&emsp;&emsp;&emsp;&emsp;&emsp;20 이용시 경안동 공용주차장 정류장 하차</p>
-
-				<p>좌석버스 : 1113번 이용시 광주터미널 정류장 하차</p>
-
-			</div>
-
-		</div>
-
-	</div>
-
-	<div id="map" style="width: 2200px; height: 1200px;"></div>
-
+	<center><div id="map" style="width: 1137px; height: 400px;"></div></center>
+	
 	<script type="text/javascript"
 
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=fbbc7335f83ea0e291ce40cd973c1669"></script>
@@ -249,10 +234,28 @@
 		infowindow.open(map, marker)
 
 	</script>
+	<br><br>
+	<div class="container">
 
-	<div>
+		<div class="jumbotron">
 
-	
+			<div class="container">
+
+				<h1>찾아오시는 길</h1>
+
+				<p>☎ 1600-9955 ☎</p>
+
+				<p>일반버스 : 32, 17, 60 이용시 광주터미널 정류장 하차</p>
+
+			    <p>&emsp;&emsp;&emsp;&emsp;&emsp;2, 660, 17-1, 33-2 이용시 경안동 주민센터, 우체국앞 정류장 하차</p>
+
+				<p>&emsp;&emsp;&emsp;&emsp;&emsp;20 이용시 경안동 공용주차장 정류장 하차</p>
+
+				<p>좌석버스 : 1113번 이용시 광주터미널 정류장 하차</p>
+
+			</div>
+
+		</div>
 
 	</div>
 

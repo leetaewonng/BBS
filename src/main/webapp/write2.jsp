@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="java.io.PrintWriter" %>
-<%@ page import="bbs.Bbs" %>
-<%@ page import="bbs.BbsDAO" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,23 +11,11 @@
 <title>경기도 광주 백신 정보사이트</title>
 </head>
 <body>
-	<%
-		String userID = null;
+		<%
+	String userID = null;
 	if (session.getAttribute("userID") != null) {
 		userID = (String) session.getAttribute("userID");
 	}
-	int bbsID = 0;
-	if (request.getParameter("bbsID") != null) {
-		bbsID = Integer.parseInt(request.getParameter("bbsID"));
-	}
-	if (bbsID == 0) {
-		PrintWriter script = response.getWriter();
-		script.println("<script>");
-		script.println("alert('유효하지 않은 글입니다.')");
-		script.println("location.href = 'bbs.jsp'");
-		script.println("</script>");
-	}
-	Bbs bbs = new BbsDAO().getBbs(bbsID);
 	%>
 	<br>
 	<center>
@@ -37,7 +23,7 @@
 	</center>
 	<br>
 	<nav class="navbar navbar-default">
-	<div class="navbar-header">
+		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed"
 				data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
 				aria-expanded="false">
@@ -75,7 +61,7 @@
 			}
 			%>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="main.jsp">홈</a>
+				<li ><a href="main.jsp">홈</a>
 				</li>
 				<li><a href="https://ncvr.kdca.go.kr/cobk/index_n.html">예약하러 가기</a>
 				</li>
@@ -93,42 +79,38 @@
 	</nav>
 	<div class="container">
 		<div class="row">
+			<form method="post" action="writeAction2.jsp">
 			<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
 				<thead>
 					<tr>
-						<th colspan="3" style="background-color: #eeeeee; text-align: center;">게시판 글 보기</th>
+						<th colspan="2" style="background-color: #eeeeee; text-align: center;">게시판 글쓰기 양식</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<td style="width: 20%;">글 제목</td>
-						<td colspan="2"><%= bbs.getBbsTitle() %></td>
+						<td><input type="text" class="form-control" placeholder="글 제목" name="bbsTitle" maxlength="50"></td>
 					</tr>
 					<tr>
-						<td>작성자</td>
-						<td colspan="2"><%= bbs.getUserID() %></td>
+<!-- 						<td><input type="text" class="form-control" placeholder="백신" name="bbsVaccine" maxlength="50"></td> -->
+					<label for="bbsVaccine">접종한 백신</label>
+					<select id="bbsVaccine" name="bbsVaccine" size="1">
+						<option value="">선택하세요</option>
+						<option value="아스트라제네카">아스트라제네카</option>
+						<option value="얀센">얀센</option>
+						<option value="모더나">모더나</option>
+						<option value="화이자">화이자</option>
+					</select>
 					</tr>
 					<tr>
-						<td>작성일자</td>
-						<td colspan="2"><%= bbs.getBbsDate().substring(0, 11) + bbs.getBbsDate().substring(11, 13) + "시" + bbs.getBbsDate().substring(14, 16) + "분" %></td>
+						<td><input type="text" class="form-control" placeholder="나이" name="bbsAge" maxlength="50"></td>
 					</tr>
 					<tr>
-						<td>내용</td>
-						<td colspan="2" style="min-height: 200px; text-align: left;"><%= bbs.getBbsContent().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>") %></td>
+						<td><textarea class="form-control" placeholder="글 내용" name="bbsContent" maxlength="2048" style="height: 350px;"></textarea></td>
 					</tr>
 				</tbody>
 			</table>
-			<a href="bbs.jsp" class="btn btn-primary">목록</a>
-			<%
-				if(userID != null && userID.equals(bbs.getUserID())) {
-			%>
-				<a href="update.jsp?bbsID=<%= bbsID %>" class="btn btn-primary">수정</a>
-				<a onclick="return confirm('정말 삭제하시겠습니까?')" 
- 			       href="deleteAction.jsp?bbsID=<%= bbsID %>" class="btn btn-primary">삭제</a>
-			<%
-				}
-			%>
 			<input type="submit" class="btn btn-primary pull-right" value="글쓰기">
+			</form>
 		</div>
 	</div>
 	<script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

@@ -132,23 +132,5 @@ public class UserDAO {
 		}
 		return -1; // 데이터베이스 오류
 	}
-//public int join2(String userPassword2, String userPassword) {
-//	String SQL = "SELECT userPassword FROM USER WHERE userPassword2 = ?";
-//	try {
-//		pstmt = conn.prepareStatement(SQL);
-//		pstmt.setString(2, userPassword);
-//		pstmt.setString(3, userPassword2);
-//		rs = pstmt.executeQuery();
-//		if(rs.next()) {
-//			if(userPassword.equals("") || userPassword2.equals(""))
-//				return 1; // 패스워드 확인성공
-//			else 
-//				return 0; // 비밀번호 불일치
-//		}
-//		return -1; // 아이디가 없음
-//	} catch (Exception e) {
-//		e.printStackTrace();
-//	}
-//	return -2; //데이터베이스 오류
-//}
+
 }

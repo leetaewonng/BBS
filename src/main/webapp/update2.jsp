@@ -13,7 +13,6 @@
 <title>경기도 광주 백신 정보사이트</title>
 </head>
 <body>
-
 	<%
 		String userID = null;
 		if (session.getAttribute("userID") != null) {

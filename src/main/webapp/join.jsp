@@ -42,6 +42,72 @@
 	</script>
 </head>
 <body>
+<%
+	String userID = null;
+	if (session.getAttribute("userID") != null) {
+		userID = (String) session.getAttribute("userID");
+	}
+	%>
+	<br>
+	<center>
+		<a href="main.jsp"> <img src="images/2.png" width="400" height="100"></a>
+	</center>
+	<br>
+	<nav class="navbar navbar-default">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed"
+				data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+				aria-expanded="false">
+				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="main.jsp"> 경기도 광주 </a> 
+			<a class="navbar-brand">COVID-19<br>코로나19 예방접종 백신정보 사이트</a>
+		</div>
+		<div class="collapse navbar-collapse id=bs-example-navbar-collapse-1">
+			<%
+			if (userID == null) {
+			%>
+			<ul class="nav navbar-nav navbar-right">
+				<li class="active" class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown" role="button" aria-haspopup="true"
+					aria-expanded="false">접속하기<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="login.jsp">로그인</a></li>
+						<li><a href="join.jsp">회원가입</a></li>
+					</ul></li>
+			</ul>
+			<%
+			} else {
+			%>
+			<ul class="nav navbar-nav navbar-right">
+				<li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown" role="button" aria-haspopup="true"
+					aria-expanded="false" class="active">접속하기<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="logoutAction.jsp">로그아웃</a></li>
+					</ul></li>
+			</ul>
+			<%
+			}
+			%>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="main.jsp">홈</a>
+				</li>
+				<li><a href="https://ncvr.kdca.go.kr/cobk/index_n.html">예약하러 가기</a>
+				</li>
+				<li><a href="map.jsp">의료기관 위치</a>
+				</li>
+				<li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown" role="button" aria-haspopup="true"
+					aria-expanded="false">게시판<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="bbs.jsp">자유게시판</a></li>
+						<li><a href="bbs2.jsp">후기게시판</a></li>
+					</ul></li>
+			</ul>
+		</div>
+	</nav>
 	<div class="container">
 		<div class="col=lg-4"></div>
 		<div class="col=lg-4">
@@ -49,7 +115,7 @@
 			<table class="table table-bordered table-hover" style="text-align: center; border: 1px solid #dddddd">
 				<thead>
 					<tr>
-						<h3 style="text-align: center;">회원가입 화면</h3>
+						<h3 style="text-align: center;">회 원 가 입</h3>
 					</tr>
 				</thead>
 				<tbody>
@@ -99,6 +165,7 @@
 				</tbody>
 			</table>
 		</form>
+	</div>
 	</div>
 	<%
 		String messageContent = null;

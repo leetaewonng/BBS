@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="java.io.PrintWriter" %>
-<%@ page import="bbs.Bbs" %>
-<%@ page import="bbs.BbsDAO" %>
+<%@ page import="bbs2.Bbs" %>
+<%@ page import="bbs2.BbsDAO" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -107,6 +107,10 @@
 					<tr>
 						<td>작성자</td>
 						<td colspan="2"><%= bbs.getUserID() %></td>
+					</tr>
+					<tr>
+						<td>나이</td>
+						<td colspan="2"><%= bbs.getBbsAge() %></td>
 					</tr>
 					<tr>
 						<td>작성일자</td>

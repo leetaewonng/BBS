@@ -20,6 +20,7 @@
 </style>
 </head>
 <body>
+
 	<%
 		String userID = null;
 		if (session.getAttribute("userID") != null) {
@@ -30,6 +31,11 @@
 			pageNumber = Integer.parseInt(request.getParameter("pageNumber"));
 		}
 	%>
+	<br>
+	<center>
+		<a href="main.jsp"> <img src="images/2.png" width="400" height="100"></a>
+	</center>
+	<br>
 	<nav class="navbar navbar-default">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed"
@@ -75,11 +81,31 @@
 				</li>
 				<li><a href="map.jsp">의료기관 위치</a>
 				</li>
-				<li class="active"><a href="bbs.jsp">자유게시판</a>
-				</li>
+					<li class="active" class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown" role="button" aria-haspopup="true"
+					aria-expanded="false">게시판<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="bbs.jsp">자유게시판</a></li>
+						<li><a href="bbs2.jsp">후기게시판</a></li>
+					</ul></li>
 			</ul>
 		</div>
 	</nav>
+	
+	<li class="dropdown"><a href="#" class="dropdown-toggle"
+
+					data-toggle="dropdown" role="button" aria-haspopup="true"
+
+					aria-expanded="false">자 유 게 시 판<span class="caret"></span></a>
+
+					<ul class="dropdown-menu">
+
+						<li><a href="bbs.jsp">자 유 게 시 판</a></li>
+
+						<li><a href="bbs2.jsp">후 기 게 시 판</a></li>
+
+					</ul></li>
+					<h1 style="text-align: center;">자 유 게 시 판</h1><br>
 	<div class="container">
 		<div class="row">
 			<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
@@ -101,7 +127,8 @@
 						<td><%= list.get(i).getBbsID() %></td>
 						<td><a href="view.jsp?bbsID=<%= list.get(i).getBbsID() %>"><%= list.get(i).getBbsTitle().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>")  %></a></td>
 						<td><%= list.get(i).getUserID() %></td>
-						<td><%= list.get(i).getBbsDate().substring(0, 11) + list.get(i).getBbsDate().substring(11, 13) + "시" + list.get(i).getBbsDate().substring(14, 16) + "분" %></td>
+<%-- 						<td><%= list.get(i).getBbsDate().substring(0, 11) + list.get(i).getBbsDate().substring(11, 13) + "시" + list.get(i).getBbsDate().substring(14, 16) + "분" %></td> --%>
+						<td><%= list.get(i).getBbsDate().substring(0, 11)%></td>
 					</tr>
 					<%
 						}
